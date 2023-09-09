@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<!-- react lib -->
+	<script type="text/javascript" src="./lib/react@18.2.0/react@18.2.0.production.min.js"></script>
+	<script type="text/javascript" src="./lib/react-dom@18.2.0/react-dom@18.2.0.production.min.js"></script>
+	<script type="text/javascript" src="./lib/babel_standalone@7.22.17/babel_standalone@7.22.17.min.js"></script>
+</head>
+
+<body>
+	<div id="root"></div>
+	<script type="text/babel" data-type="module">
+		function Title() {
+			return <h3 id="title" onMouseEnter={() => { console.log("onMouseEnter") }}>
+				Hello I'm a title
+			</h3>;
+		}
+		function Button() {
+			return <button
+				style={{ backgroundColor: "tomato", }}
+				onClick={() => { console.log("clicked") }}
+			>Click me</button>;
+		}
+
+		const container = <div> <Title /> <Button /> </div>
+		ReactDOM.render(container, root);
+	</script>
+
+</body>
+
+</html>

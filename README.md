@@ -33,7 +33,7 @@
 
 ## 코드 정리
 - mac  
-	``` cmd + shift + f ``` 버튼으로 코드 정리
+	``` option + shift + f ``` 버튼으로 코드 정리
 - window  
 	``` alt + shift + f ``` 버튼으로 코드 정리
 
