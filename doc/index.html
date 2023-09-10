@@ -15,20 +15,51 @@
 <body>
 	<div id="root"></div>
 	<script type="text/babel" data-type="module">
-		function Title() {
-			return <h3 id="title" onMouseEnter={() => { console.log("onMouseEnter") }}>
-				Hello I'm a title
-			</h3>;
-		}
-		function Button() {
-			return <button
-				style={{ backgroundColor: "tomato", }}
-				onClick={() => { console.log("clicked") }}
-			>Click me</button>;
+
+		function Container() {
+			const [count, setcount] = React.useState(1);
+			const onClick = () => {
+				setcount(count + 1);
+			}
+			return <div>total : {count}
+				<button onClick={onClick}>click</button>
+			</div>;
 		}
 
-		const container = <div> <Title /> <Button /> </div>
-		ReactDOM.render(container, root);
+		function Label(child) {
+			return <label>{child['children']};</label>;
+		};
+		function Input(child) {
+			console.log(child['value']);
+			const [value, set_value] = React.useState(child['value']);
+			const onChange = (event) => {
+				set_value(event.target.value);
+				console.log(value);
+			}
+			return <input
+				value={value}
+				id={child['children']}
+				placeholder={child['children']}
+				type="number"
+				onChange={onChange} />;
+		};
+
+		function Timer(child) {
+
+			return <div>
+				<Label>Minutes</Label>
+				<Input value={1}>Minutes</Input>
+				<Label>Hours</Label>
+				<Input>Hours</Input>
+			</div>;
+		}
+		const App = () => (
+			<div>
+				<Container />
+				<Timer />
+			</div>
+		)
+		ReactDOM.render(<App />, root);
 	</script>
 
 </body>
