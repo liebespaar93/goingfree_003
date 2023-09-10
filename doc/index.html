@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<!-- react lib -->
+	<script type="text/javascript" src="./lib/react@18.2.0/react@18.2.0.production.min.js"></script>
+	<script type="text/javascript" src="./lib/react-dom@18.2.0/react-dom@18.2.0.production.min.js"></script>
+	<script type="text/javascript" src="./lib/babel_standalone@7.22.17/babel_standalone@7.22.17.min.js"></script>
+</head>
+
+<body>
+	<div id="root"></div>
+	<script type="text/babel" data-type="module">
+
+		function Container() {
+			const [count, setcount] = React.useState(1);
+			const onClick = () => {
+				setcount(count + 1);
+			}
+			return <div>total : {count}
+				<button onClick={onClick}>click</button>
+			</div>;
+		}
+
+		function Label(child) {
+			return <label>{child['children']};</label>;
+		};
+		function Input(child) {
+			console.log(child['value']);
+			const [value, set_value] = React.useState(child['value']);
+			const onChange = (event) => {
+				set_value(event.target.value);
+				console.log(value);
+			}
+			return <input
+				value={value}
+				id={child['children']}
+				placeholder={child['children']}
+				type="number"
+				onChange={onChange} />;
+		};
+
+		function Timer(child) {
+
+			return <div>
+				<Label>Minutes</Label>
+				<Input value={1}>Minutes</Input>
+				<Label>Hours</Label>
+				<Input>Hours</Input>
+			</div>;
+		}
+		const App = () => (
+			<div>
+				<Container />
+				<Timer />
+			</div>
+		)
+		ReactDOM.render(<App />, root);
+	</script>
+
+</body>
+
+</html>
