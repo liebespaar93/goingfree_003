@@ -1,32 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function App() {
-
-	const [toDo, setToDo] = React.useState("");
-	const [toDos, setToDos] = React.useState([]);
-	const onChange = (event) => setToDo(event.target.value);
-	const onSubmit = (event) => {
-		event.preventDefault();
-		if (toDo === "")
-			return;
-		setToDos((self) => { return [toDo, ...self]});
-		setToDo("");
-		console.log(toDo, toDos);
-	}
+	const [loading, setLoading] = useState(true);
+	const [coins, setCoins] = useState([]);
+	useEffect(() => {
+		let src = "https://api.coinpaprika.com/v1/tickers";
+		fetch(src)
+			.then((res) => res.json())
+			.then((data) => { setCoins(data); setLoading(false) })
+	}, [])
 
 	return (
 		<div className="App">
-			<form onSubmit={onSubmit}>
-				<h1>Doc ({toDos.length})</h1>
-				<input onChange={onChange}
-					value={toDo}
-					placeholder="write" />
-				<button>button</button>
-			</form>
-			<hr />
-			<div>
-				{toDos.map((value, index) => <li key={index}>{value}</li>)}
-			</div>
+			<h1>The Coins! {coins.length}</h1>
+			{loading ? <strong>Loading...</strong> :
+				<select>
+					{coins.map(
+						(value, index) => {
+							return <option key={index}> {value.symbol}: ${value.quotes.USD.price}</option>;
+						})}
+				</select>
+			}
 		</div>
 	);
 }
