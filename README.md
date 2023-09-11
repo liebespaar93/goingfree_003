@@ -1,13 +1,5 @@
 # blog-alone
 
-<<<<<<< HEAD
-### 기능정리
--환경설정
--회원가입
--로그인
--글쓰기
-=======
-
 ## 협업을 위한 준비
 ## vscode 플러그
 ### [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
@@ -37,6 +29,23 @@
 ### [Dotenv Official +Vault](https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode)
 - env 자동완성
 	- 사용목적 : env 목록 확인 및 자동완성
+	- 보류 : 확인 안됨
+### [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- react snippets
+	- 사용목적 : 파일 틀 코드 만들기용
+	- rfcp 예시
+		```
+		import React from 'react'
+		import PropTypes from 'prop-types'
+
+		function $1(props) {
+			return <div>$0</div>
+		}
+
+		$1.propTypes = {}
+
+		export default $1
+		```
 
 ## git 설정
 ### .gitconfig
@@ -55,4 +64,3 @@
 ## 참고 사이트
 ### 이모지
 - https://github.com/carloscuesta/gitmoji
->>>>>>> test
