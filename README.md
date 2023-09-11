@@ -24,6 +24,13 @@
 - vscode markdown Mermaid 뷰어
 	- 사용목적 : 마크다운안에 다이어그램 작성 가능
 
+### [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+- npm import 자동완성
+	- 사용목적 : 설치된 module을 자동 완성 기능을 쓰기위해
+### [Dotenv Official +Vault](https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode)
+- env 자동완성
+	- 사용목적 : env 목록 확인 및 자동완성
+
 ## git 설정
 ### .gitconfig
 - 상태파일 정의
