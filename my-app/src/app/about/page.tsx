@@ -1,0 +1,10 @@
+import NavBar from '@/component/NavBar'
+import React from 'react'
+
+export default function About() {
+	return (
+		<div>
+			<p>about</p>
+		</div>
+	)
+}
