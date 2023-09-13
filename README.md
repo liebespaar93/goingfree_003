@@ -72,6 +72,15 @@
 	- 설명 : 
 	- 링크 :
 	```
+### git GPG 
+- 커밋 인증 사인하기
+- 주소 : [Github Doc GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
+- mac : [GPGtools](https://gpgtools.org/) !주의 safari에서만 다운가능
+- window : [gnupg](https://www.gnupg.org/)
+### git LFS
+- 대용량 파일 업로드 
+- 주소 : [Github Doc LFS](https://docs.github.com/ko/repositories/working-with-files/managing-large-files/installing-git-large-file-storage)
+
 ## 코드 정리
 - mac  
 	``` option + shift + f ``` 버튼으로 코드 정리
