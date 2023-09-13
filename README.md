@@ -53,7 +53,25 @@
 ### .gitmessage
 - 커밋 형식 맞추기  
 	``` git commit ``` 으로 작성하여 vi 설정에서 확인후 수정하기
+### .github/ISSUE_TEMPLATE/***.md
+- 이슈 형식 맞추기
+	```
+	---
+	name: "[이모티콘] 이슈 이름"
+	about: 설명을 적는다
+	title: "[YYYYMMDD] 타이틀 - 제목"
+	labels: ''
+	assignees: liebespaar93
 
+	---
+
+	### 내부 내용
+
+	- 제목 : 
+	- 번호 : 
+	- 설명 : 
+	- 링크 :
+	```
 ## 코드 정리
 - mac  
 	``` option + shift + f ``` 버튼으로 코드 정리
