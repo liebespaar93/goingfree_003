@@ -1,8 +1,10 @@
 ---
-name: "🫥 test"
+name: "\U0001FAE5 test"
 about: 테스트
-title: "😈[날짜] 타이틀 "
-labels: '라벨'
+title: "\U0001F608[날짜] 타이틀 "
+labels: ''
+assignees: ''
+
 ---
 
 ### 문제 개요
